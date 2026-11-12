@@ -13,7 +13,7 @@ A second brain for your coding agent: search your past Claude Code conversations
 
 ```bash
 claude mcp add second-brain --scope user --transport stdio \
-  --env MISTRAL_API_KEY=your-key -- npx -y second-brain-mcp
+  --env MISTRAL_API_KEY=your-key -- npx -y @myr0ix/second-brain-mcp
 ```
 
 To also index a folder of Markdown notes, add `--env SECOND_BRAIN_NOTES=/absolute/path/to/notes` before the `--`. A ready-made `.mcp.json` is in `.mcp.json.example`.
@@ -36,8 +36,8 @@ Environment variables. Values are used as is: `~` is not expanded, so write abso
 The server starts an incremental index in the background. It runs at most once per 30 minutes across all processes that share the same database. If a background run fails or is killed, starts in the next 30 minutes skip indexing. To force a run:
 
 ```bash
-npx second-brain-mcp index            # index now
-npx second-brain-mcp index --dry-run  # no API call, no documents written; counts what is not indexed yet
+npx -y @myr0ix/second-brain-mcp index            # index now
+npx -y @myr0ix/second-brain-mcp index --dry-run  # no API call, no documents written; counts what is not indexed yet
 ```
 
 Unchanged files are skipped on later runs. Conversations with fewer than 3 user prompts are never indexed (aborted starts, one-shot questions). `index` exits with code 1 when a source failed. A file that fails (unreadable note, API error) is logged and the run continues, except when Mistral rejects the API key: the run stops at the first source, logs one error, and reports the remaining sources as not processed.

@@ -1,5 +1,5 @@
 {
-  "name": "second-brain-mcp",
+  "name": "@myr0ix/second-brain-mcp",
   "version": "0.1.0",
   "description": "MCP server that gives your coding agent a searchable second brain: past Claude Code conversations and your Markdown notes.",
   "type": "module",
@@ -25,6 +25,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rm -rf dist && tsc",
     "prepack": "npm run build",

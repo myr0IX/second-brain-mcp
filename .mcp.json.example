@@ -3,7 +3,7 @@
     "second-brain": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "second-brain-mcp"],
+      "args": ["-y", "@myr0ix/second-brain-mcp"],
       "env": {
         "MISTRAL_API_KEY": "your-key",
         "SECOND_BRAIN_NOTES": "/absolute/path/to/notes",
