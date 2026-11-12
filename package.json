@@ -20,7 +20,7 @@
     "node": ">=22"
   },
   "bin": {
-    "second-brain-mcp": "./dist/cli.js"
+    "second-brain-mcp": "dist/cli.js"
   },
   "files": [
     "dist"
