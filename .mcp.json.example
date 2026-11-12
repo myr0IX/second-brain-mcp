@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "second-brain": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "second-brain-mcp"],
+      "env": {
+        "MISTRAL_API_KEY": "your-key",
+        "SECOND_BRAIN_NOTES": "/absolute/path/to/notes",
+        "SECOND_BRAIN_TRANSCRIPTS": "/absolute/path/to/.claude/projects",
+        "SECOND_BRAIN_DB": "/absolute/path/to/brain.db"
+      }
+    }
+  }
+}

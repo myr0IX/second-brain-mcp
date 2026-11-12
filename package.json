@@ -1,0 +1,51 @@
+{
+  "name": "second-brain-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that gives your coding agent a searchable second brain: past Claude Code conversations and your Markdown notes.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myr0IX/second-brain-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "claude-code",
+    "rag",
+    "second-brain",
+    "obsidian",
+    "semantic-search"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "second-brain-mcp": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "prepack": "npm run build",
+    "start": "node dist/cli.js",
+    "dev": "tsx watch src/cli.ts",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
+    "smoke": "tsx scripts/smoke.ts",
+    "qa": "tsx scripts/qa.ts",
+    "verify": "npm run typecheck && npm run build && npm run smoke && npm run qa"
+  },
+  "dependencies": {
+    "@mistralai/mistralai": "^2.7.0",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "better-sqlite3": "^13.0.3",
+    "sqlite-vec": "^0.1.9",
+    "zod": "^4.6.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0"
+  }
+}
